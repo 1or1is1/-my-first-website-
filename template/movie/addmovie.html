@@ -1,0 +1,59 @@
+{% extends 'movie/base.html' %}
+
+{% block content %}
+    <form action="addmovie" method="POST">
+        {% csrf_token %}
+        <div class="container form-group">
+            <br />
+            <div class="col mb-3">
+                <label for="firstname">Enter <strong>your</strong> name :</label>
+                <input type="text" class="form-control" id="firstname" placeholder="Name" name='f_name'>
+            </div>
+            <div class="col mb-3">
+                <label for="moviename">Enter the <strong>movie</strong> name :</label>
+                <input type="text" class="form-control" id="moviename" placeholder="Movie Name" name='movie_name'>
+            </div>
+            <h5 class="col">Genres</h5>
+            <div class="form-group col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="animation" name="genres" value='animation'>
+                    <label class="form-check-label" for="animation">Animation</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="comedy" name="genres" value='comedy'>
+                    <label class="form-check-label" for="comedy">Comedy</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="crime" name="genres" value='crime'>
+                    <label class="form-check-label" for="crime">Crime</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="mystery" name="genres" value='mystery'>
+                    <label class="form-check-label" for="mystery">Mystery</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="actionandadventure" name="genres" value='actionandadventure'>
+                    <label class="form-check-label" for="actionandadventure">Action & Adventure</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="sci-fi" name="genres" value='sci-fi'>
+                    <label class="form-check-label" for="sci-fi">Sci-Fi</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="family" name="genres" value='family'>
+                    <label class="form-check-label" for="family">Family</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="documentary" name="genres" value='documentary'>
+                    <label class="form-check-label" for="documentary">Documentary</label>
+                </div>
+            </div>
+            <div class="form-group col">
+                <label for="moviedescription">Anything you would like to say about the movie.</label>
+                <textarea class="form-control" id="moviedescription" rows="3" name='movie_desc'></textarea><br />
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

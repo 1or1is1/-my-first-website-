@@ -1,0 +1,23 @@
+{% extends 'movie/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for movie in the_movie %}
+            <div class="col-sm-3 my-3" >
+                <div class="card text-center border-dark" style="box-shadow: 2px 2px 5px black, 5px 6px 8px grey;">
+                    <div class="card-body">
+                        <img class="card-img-top img-fluid mb-2" style="width: 260px; height: 260px;" src="{% static '/movie/images/test.jpg' %}" alt="movie">
+                        <h5 class="card-title">{{ movie.title }}</h5>
+                        <p class="card-text">{{ movie.description }}.</p>
+                        <button type="button" class="btn btn-success mr-4">Likes: {{ movie.likes }}</button>
+                        <button type="button" class="btn btn-danger">Dislikes: {{ movie.dislikes }}</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
